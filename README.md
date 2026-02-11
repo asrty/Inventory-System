@@ -1,7 +1,7 @@
 
 # MaterialFlow: Sistema de Controle de Materiais Corporativos
 
-Este sistema permite a gestão eficiente de materiais entre diferentes setores de uma organização, com dashboards administrativos e controle de estoque por setor.
+Este sistema permite a gestão eficiente de materiais entre diferentes setores de uma organização.
 
 ## 🚀 Tecnologias
 - **Frontend:** React + TypeScript + Tailwind CSS + Recharts
@@ -44,3 +44,30 @@ As rotas de relatórios administrativos utilizam Redis para cache:
 - `GET /admin/relatorios`: Dados agregados para gráficos (Apenas Admin).
 - `GET /admin/users`: Gerenciamento de usuários.
 - `GET /setores`: Lista setores cadastrados.
+
+## 🚀 Execução em Desenvolvimento Local (Sem Docker)
+
+Se você deseja editar o código e ver as mudanças em tempo real:
+
+### 1. Requisitos
+- Node.js instalado.
+- PostgreSQL e Redis rodando localmente.
+
+### 2. Backend
+1. Entre na pasta do backend.
+2. Crie um arquivo `.env` (use o `README.md` como base para as variáveis).
+3. Instale as dependências: `npm install`.
+4. Sincronize o banco: `npx prisma db push`.
+5. Inicie: `npm run dev` (ou `npx tsx watch server.ts`).
+
+### 3. Frontend
+1. Na pasta raiz, instale as dependências: `npm install`.
+2. Crie um arquivo `.env` com `VITE_API_URL=http://localhost:3001`.
+3. Inicie: `npm run dev`.
+
+---
+
+## 🔐 Credenciais Padrão (Seed)
+- **Admin:** `admin@empresa.com` / `123456`
+- **Setor TI:** `maria@empresa.com` / `123456`
+- **Setor Logística:** `joao@empresa.com` / `123456`

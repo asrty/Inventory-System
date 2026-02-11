@@ -1,5 +1,7 @@
 
-const API_URL = 'http://localhost:3001';
+// Usa a variável de ambiente do Vite ou fallback para localhost:3001
+// Fix: Cast import.meta to any to resolve the TypeScript error when accessing Vite environment variables
+const API_URL = (import.meta as any).env?.VITE_API_URL || 'http://localhost:3001';
 
 const getHeaders = () => {
   const token = localStorage.getItem('token');
