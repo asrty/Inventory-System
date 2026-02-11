@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import { Routes, Route, Navigate, useNavigate, Link } from 'react-router-dom';
 import Login from './pages/Login';
@@ -76,7 +75,7 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode; roles?: Role[] }> = ({ children, roles }) => {
   const { user, loading } = useAuth();
-  if (loading) return <div class="flex items-center justify-center h-screen">Carregando...</div>;
+  if (loading) return <div className="flex items-center justify-center h-screen">Carregando...</div>;
   if (!user) return <Navigate to="/login" />;
   if (roles && !roles.includes(user.role)) return <Navigate to={user.role === Role.ADMIN ? '/admin' : '/dashboard'} />;
   return <>{children}</>;
