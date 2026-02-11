@@ -1,0 +1,5 @@
+{
+  "name": "Corporate Inventory System",
+  "description": "A full-stack corporate material management system with role-based access, real-time dashboards using Recharts, Redis caching, and a robust Node.js/Prisma backend.",
+  "requestFramePermissions": []
+}
